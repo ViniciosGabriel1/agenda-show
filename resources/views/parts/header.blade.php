@@ -143,7 +143,7 @@
                         src="{{ Vite::asset('resources/images/user2-160x160.jpg') }}">
 
 
-                    <span class="d-none d-md-inline">Alexander Pierce</span>
+                    <span class="d-none d-md-inline">{{auth()->user()->name}}</span>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-end">
                     <!--begin::User Image-->
@@ -151,7 +151,7 @@
                         <img src="../../dist/assets/img/user2-160x160.jpg" class="rounded-circle shadow"
                             alt="User Image" />
                         <p>
-                            Alexander Pierce - Web Developer
+                            {{auth()->user()->name}} - Web Developer
                             <small>Member since Nov. 2023</small>
                         </p>
                     </li>
@@ -170,7 +170,11 @@
                     <!--begin::Menu Footer-->
                     <li class="user-footer">
                         <a href="#" class="btn btn-default btn-flat">Profile</a>
-                        <a href="#" class="btn btn-default btn-flat float-end">Sign out</a>
+                        <form action="{{route('logout')}}" method="post">
+                            @csrf
+                            <button  class="btn btn-default btn-flat float-end" type="submit">Logout</button>
+                        </form>
+                        {{-- <a href="#" class="btn btn-default btn-flat float-end">Sign out</a> --}}
                     </li>
                     <!--end::Menu Footer-->
                 </ul>
