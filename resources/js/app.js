@@ -1,4 +1,8 @@
 
+import './schedules/schedule';  // Carrega a lógica de schedules e máscaras
+import Swal from 'sweetalert2'
+
+window.Swal = Swal;
 
 import.meta.glob([
   '../images/**'

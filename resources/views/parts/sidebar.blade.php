@@ -51,13 +51,25 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item">
-                    <a href="./generate/theme.html" class="nav-link">
+                 <li class="nav-item">
+                    <a href="{{route('schedule.create')}}" class="nav-link">
+                        <i class="nav-icon bi bi-palette"></i>
+                        <p>Cadastro</p>
+                    </a>
+                </li>
+                 <li class="nav-item">
+                    <a href="#" class="nav-link">
                         <i class="nav-icon bi bi-palette"></i>
                         <p>Theme Generate</p>
                     </a>
                 </li>
-                <li class="nav-item">
+                 <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon bi bi-palette"></i>
+                        <p>Theme Generate</p>
+                    </a>
+                </li>
+                {{--<li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="nav-icon bi bi-box-seam-fill"></i>
                         <p>
@@ -433,7 +445,7 @@
                         <i class="nav-icon bi bi-circle text-info"></i>
                         <p>Informational</p>
                     </a>
-                </li>
+                </li> --}}
             </ul>
             <!--end::Sidebar Menu-->
         </nav>
