@@ -20,7 +20,7 @@ class Schedule extends Model
     protected $fillable = [
         'patient_name',
         'document',
-        'patient_contact',
+        'contact',
         'service',
         'appointment_date',
         'queue_number',
