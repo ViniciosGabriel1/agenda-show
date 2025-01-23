@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ScheduleRequest;
 use App\Models\Schedule;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class ScheduleController extends Controller
@@ -11,8 +12,12 @@ class ScheduleController extends Controller
 
     public function index()
     {
-        $schedules = Schedule::orderBy('appointment_date')->get();
-
+        $dataHoje = Carbon::today()->toDateString(); 
+        // dd($dataHoje);
+        $schedules = Schedule::whereDate('appointment_date', $dataHoje)
+        ->orderBy('appointment_date')
+        ->get();
+        // dd($schedules);
         return view('schedule.index', compact('schedules'));
     }
     public function create()
