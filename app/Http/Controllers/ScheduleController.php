@@ -15,10 +15,14 @@ class ScheduleController extends Controller
         $dataHoje = Carbon::today()->toDateString(); 
         // dd($dataHoje);
         $schedules = Schedule::whereDate('appointment_date', $dataHoje)
+        ->where('status','Pendente')
         ->orderBy('appointment_date')
         ->get();
+
+
+        $count = count($schedules);
         // dd($schedules);
-        return view('schedule.index', compact('schedules'));
+        return view('schedule.index', compact('schedules','count'));
     }
     public function create()
     {
@@ -51,6 +55,12 @@ class ScheduleController extends Controller
         // Redireciona para a rota de criação com uma mensagem de sucesso
         return redirect()->route('schedule.create')
             ->with('success', 'Agendamento de ' . $validatedData['patient_name'] . ' criado com sucesso!');
+    }
+
+
+
+    public function edit($id){
+        dd($id);
     }
 
 
